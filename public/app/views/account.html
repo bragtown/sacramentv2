@@ -1,0 +1,22 @@
+<div class = "well">
+	<div class = "{{userRes.class}}">{{userRes.message}}</div>
+	<label for = "First Name">First Name</label>
+	<input class = "form-control" type="text" ng-model = "user.fName" name="First Name"/>
+
+	<label for = "Last Name">Last Name</label>
+	<input class = "form-control" type="text" ng-model = "user.lName" name="Last Name"/>
+
+	<label for = "Password">Password</label>
+	<input class = "form-control" type="text" ng-model = "user.password" name="Password"/>
+
+	<label for = "Confirm Password">Confirm Password</label>
+	<input class = "form-control" type="text" ng-model = "user.cPassword" name="Password"/>
+	<button class = "btn" ng-click = "updateUser()">Update</button>
+</div>
+
+<div class = "well">
+	<div class = "{{orgRes.class}}">{{orgRes.message}}</div>
+	<label for = "org">Ward</label>
+	<input class = "form-control" type="text" name="org" ng-model = "user.org"/>
+	<button class = "btn" ng-click = "updateOrg()">Update</button>
+</div>

@@ -22,10 +22,11 @@
               <li ng-hide = "user.fName == undefined" class="dropdown">
           		<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome {{user.fName}} <span class="caret"></span></a>
           		<ul class="dropdown-menu">
+                <li><a ui-sref = "home.account">Account</li>
           			<li><a ng-click = "logout()">Logout</a></li>
           		</ul>
           	  </li>
-              <li ng-hide = "user.fName == undefined" ng-class = "activeClass('home.dash')"><a ui-sref="home.dash">Dashboard</a></li>
+              <li ng-hide = "user.fName == undefined" ng-class = "activeClass('home.select')"><a ui-sref="home.select">Select Program</a></li>
             </ul>
           </div>
         </div>

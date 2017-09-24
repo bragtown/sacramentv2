@@ -4,10 +4,12 @@ var Schema = mongoose.Schema;
 var UserSchema = new Schema({
 	fName:{type:String},
 	lName:{type:String},
+	org:{type:String},
 	local:{
 		email:String,
 		password:String
-	}
+	},
+	programs:[]
 });
 //generates a hash
 UserSchema.methods.generateHash = function(password){

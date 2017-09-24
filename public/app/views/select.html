@@ -1,0 +1,12 @@
+<button class = "btn btn-success" ng-click = "newProgram()">New Program</button>
+<table class = "table">
+	<tbody>
+		<tr ng-repeat = "(index,program) in programs.programs">
+			<td>
+				<button ng-click = "gotoProgram(index)" class = "btn btn-info">Select</button>
+			</td>
+			<td>{{program.date}}</td>
+
+		</tr>
+	</tbody>
+</table>

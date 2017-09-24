@@ -1,0 +1,94 @@
+<button ng-if = "canCopy" class = "btn" ng-class = "btn-primary" ng-click = "copy()">Copy</button>
+<input type="date" placeholder="Date" ng-model = "curP.date" class = "form-control">
+<input type="text" placeholder="Ward" ng-model = "curP.ward" class = "form-control">
+<input type="text" placeholder="Presiding" ng-model = "curP.presiding" class = "form-control">
+<input type="text" placeholder="conducting" ng-model = "curP.conducting" class = "form-control">
+<input type="text" placeholder="organist" ng-model = "curP.organist" class = "form-control">
+<input type="text" placeholder="chorister" ng-model = "curP.chorister" class = "form-control">
+<input type="text" placeholder="Image name" ng-model = "curP.image.name" class = "form-control">
+<input type="text" placeholder="image Url" ng-model = "curP.image.source" class = "form-control">
+<input type="text" placeholder="Image Fact" ng-model = "curP.image.fact" class = "form-control">
+<label>Special Program</label>
+<input type="checkbox" placeholder="" ng-model = "curP.program" class = "form-control">
+
+<input type="text" placeholder="Program Name" ng-model = "curP.programName" class = "form-control">
+<label>Fast and Testimony Meeting</label>
+<input type="checkbox" placeholder="" ng-model = "curP.fast" class = "form-control">
+
+<label>Speakers before the hymn</label><br>
+<div ng-repeat = "(index, speaker) in curP.youthSpeakers" >
+	<input type="text" placeholder="Youth Speaker" ng-model = "speaker.name" class = "form-control">
+	<button class = "btn btn-danger" ng-click = "removeYouthSpeaker(index)">X</button>
+</div>
+<button ng-click = "addYouthSpeaker()" class = "btn btn-primary">+ Youth Speaker</button>
+<br>
+<div ng-repeat = "(index, speaker) in curP.pSpeakers" >
+	<input type="text" placeholder="" ng-model = "speaker.name" class = "form-control">
+	<button class = "btn btn-danger" ng-click = "removePSpeaker(index)">X</button>
+</div>
+<button ng-click = "addPSpeaker()" class = "btn btn-primary">+ Speaker</button>
+<br>
+<label>Speakers after the hymn</label><br>	
+<div ng-repeat = "(index, speaker) in curP.aSpeakers" >
+	<input type="text" placeholder="" ng-model = "speaker.name" class = "form-control">
+	<button class = "btn btn-danger" ng-click = "removeASpeaker(index)">X</button>
+</div>
+<button ng-click = "addASpeaker()" class = "btn btn-primary">+ Speaker</button>
+
+<input type="text" placeholder="Invocation" ng-model = "curP.invocation" class = "form-control">
+<input type="text" placeholder="Benediction" ng-model = "curP.benediction" class = "form-control">
+<input type="number" placeholder="Opening Hymn" ng-model = "curP.opening" class = "form-control">
+<input type="number" placeholder="Sacrament Hymn" ng-model = "curP.sacrament" class = "form-control">
+<input type="number" placeholder="Intermediate Hymn" ng-model = "curP.intermediate" class = "form-control">
+<input type="number" placeholder="Closing Hymn" ng-model = "curP.closing" class = "form-control">
+
+<label>Reminders</label>
+<div ng-repeat = "(index, reminder) in curP.reminders" >
+	<input type="text" placeholder="" ng-model = "reminder.title" class = "form-control">
+	<button class = "btn btn-danger" ng-click = "removeReminder(index)">X</button>
+	<div ng-repeat = "(jindex, datum) in reminder.data">
+		<input type = "text" placeholder="" ng-model = "datum.name" class = "form-control">
+		<input type = "text" placeholder="" ng-model = "datum.info" class = "form-control">
+		<button class = "btn btn-danger" ng-click = "removeReminderDatum(index,jindex)">X</button>
+	</div>
+	<button ng-click = "addReminderDatum(index)" class = "btn btn-primary">+ Datum</button>
+</div>
+<button ng-click = "addReminder()" class = "btn btn-primary">+ Reminder</button>
+<br>
+<label>Small/Short Reminders</label>
+<div ng-repeat = "(index, reminder) in curP.sReminders" >
+	<input type="text" placeholder="" ng-model = "reminder.name" class = "form-control">
+	<button class = "btn btn-danger" ng-click = "removeSReminder(index)">X</button>
+</div>
+<button ng-click = "addSReminder()" class = "btn btn-primary">+ Reminder</button>
+<br>
+<label>Announcements</label>
+<div ng-repeat = "(index, reminder) in curP.announcements" >
+	<input type="text" placeholder="" ng-model = "reminder.name" class = "form-control">
+	<input type="text" placeholder="" ng-model = "reminder.data" class = "form-control">
+	<button class = "btn btn-danger" ng-click = "removeAnnouncement(index)">X</button>
+</div>
+<button ng-click = "addAnnouncement()" class = "btn btn-primary">+ Announcement</button>
+<br>
+<label>Small/Short Annoucements</label>
+<div ng-repeat = "(index, reminder) in curP.sAnnouncements" >
+	<input type="text" placeholder="" ng-model = "reminder.name" class = "form-control">
+	<button class = "btn btn-danger" ng-click = "removeSAnnouncement(index)">X</button>
+</div>
+<button ng-click = "addSAnnouncement()" class = "btn btn-primary">+ Announcement</button>
+
+
+<input type="text" placeholder="Emergency Prep Contact" ng-model = "curP.emergencyPrep.contact" class = "form-control">
+<input type="text" placeholder="Emergency Prep Recipe Name" ng-model = "curP.emergencyPrep.recipeName" class = "form-control">
+<input type="memo" placeholder="Emergency Prep Recipe" ng-model = "curP.emergencyPrep.recipe" class = "form-control">
+
+<!-- leadership -->
+<div ng-repeat = "(index,leader) in leadership.leadership">
+	<input type = "text" placeholder="" ng-model = "leader.person">
+	<input type = "text" placeholder="" ng-model = "leader.phone">
+	<button ng-click = "removeLeader(index)" class = "btn btn-danger">X</button>
+</div>
+<button ng-click = "addLeader()" class = "btn btn-primary">+ Leader</button>
+<p>{{curP._id}}</p>
+<button ng-click = "submit()" class = "btn btn-primary">Save</button>
+<button ng-if = "canCopy" ng-click = "print()" class = "btn btn-success">Print</button>

@@ -11,11 +11,12 @@ angular.module('publicApp')
   .factory('userManager', function ($http, $state, $cookies) {
     // Service logic
     // ...
-    var server = 'http://localhost:9000';
+    var server = 'http://127.0.0.1:9000';
     var userObj = {
       fName:undefined,
       lName:undefined,
       email:undefined,
+      org:undefined,
       isLoggedIn:false
     };
     // Public API here
@@ -28,6 +29,7 @@ angular.module('publicApp')
             userObj.fName = res.data.user.fName;
             userObj.lName = res.data.user.lName;
             userObj.email = res.data.user.email;
+            userObj.org = res.data.user.org
             userObj.isLoggedIn = true;
             console.log(user)
           }
@@ -43,6 +45,7 @@ angular.module('publicApp')
             userObj.fName = res.data.user.fName;
             userObj.lName = res.data.user.lName;
             userObj.email = res.data.user.email;
+            userObj.org = res.data.user.org
             userObj.isLoggedIn = true;
             console.log(user)
             console.log($cookies.getAll())
@@ -50,6 +53,20 @@ angular.module('publicApp')
           if(res.data.redirect){
             $state.go(res.data.redirect);
           }
+        })
+      },
+      update: function(user){
+        console.log(user)
+        $http.post(server + "/updateuser", user).then(function(res){
+          console.log(res);
+          return res.data;
+        })
+      },
+      updateOrg:function(ward){
+        console.log(ward)
+        $http.post(server + "/updateorg", {org:ward}).then(function(res){
+          console.log(res);
+          return res.data;
         })
       },
       logout: function(){
@@ -71,8 +88,9 @@ angular.module('publicApp')
           return true
       },
       redirect: function(){
-        if(user.isLoggedIn == false)
+        if(userObj.isLoggedIn == false)
           $state.go(home.login)
       }
+
     };
   });

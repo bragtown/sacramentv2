@@ -1,0 +1,275 @@
+<div class = "">
+  <div class = "tDivL">
+    <table>
+      <tbody>
+        <tr>
+          <td class = "bold header" colspan = "2">The Church of<br><span class = "extraHead">Jesus Christ</span><br>of Latter Day Saints</td>
+        </tr>
+        <tr>
+          <td colspan = "2"><img class = "temple" align: "center" ng-src = "{{curP.image.source}}"><span class = "small">Which temple is this?</span></td>
+        </tr>
+        <tr>
+          <td class = "bold" colspan = "2">{{curP.ward}} Sacrament Meeting</td>
+        </tr>
+        <tr>
+          <td class = "bold">Presiding</td>
+          <td>{{curP.presiding}}</td>
+        </tr>
+        <tr>
+          <td class = "bold">Conducting</td>
+          <td>{{curP.conducting}}</td>
+        </tr>
+        <tr>
+          <td class = "bold">Organist</td>
+          <td>{{curP.organist}}</td>
+        </tr>
+        <tr>
+          <td class = "bold">Chorister</td>
+          <td>{{curP.chorister}}</td>
+        </tr>
+        <tr>
+          <td class = "bold">Welcome and Announcements</td>
+        </tr>
+        <tr>
+          <td class = "bold">Opening Hymn #{{curP.opening}}</td>
+          <td class = "ital">{{getHymn(curP.opening)}}</td>
+        </tr>
+        <tr>
+          <td class = "bold">Invocation</td>
+          <td>{{curP.invocation}}</td>
+        </tr>
+        <tr>
+          <td class = "bold">Ward Business</td>
+        </tr>
+        <tr>
+          <td class = "bold">Sacrament Hymn #{{curP.sacrament}}</td>
+          <td class = "ital">{{getHymn(curP.sacrament)}}</td>
+        </tr>
+        <tr>
+          <td class = "bold">Administration of the Sacrament</td>
+        </tr>
+        <tr ng-show = "curP.fast">
+          <td class = "bold">Bearing of Testimonies</td>
+        </tr>
+        <tr ng-show = "curP.program">
+          <td class = "bold">{{curP.programName}}</td>
+        </tr>
+        <tr ng-repeat = "y in curP.youthSpeakers">
+          <td class = "bold">Youth Speaker</td>
+          <td>{{y.name}}</td>
+        </tr>
+        <tr ng-repeat = "y in curP.pSpeakers">
+          <td class = "bold">Speaker</td>
+          <td>{{y.name}}</td>
+        </tr>
+        <tr ng-hide = "curP.fast || curP.program">
+          <td class = "bold">Intermediate Hymn #</span>{{curP.intermediate}}</td>
+          <td class = "ital">{{getHymn(curP.intermediate)}}</td>
+        </tr>
+        <tr ng-repeat = "y in curP.aSpeakers">
+          <td class = "bold">Speaker</td>
+          <td>{{y.name}}</td>
+        </tr>
+        <tr>
+          <td  ng-hide = "curP.program" class = "bold">Closing Hymn #{{curP.closing}}</td>
+          <td class = "ital">{{getHymn(curP.closing)}}</td>
+        </tr>
+        <tr>
+          <td class = "bold">Benediction</td>
+          <td>{{curP.benediction}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class = "tDivR">
+
+    <table>
+      <tbody>
+        <tr>
+          <td class = "bold header" colspan = "2">The Church of<br><span class = "extraHead">Jesus Christ</span><br>of Latter Day Saints</td>
+        </tr>
+        <tr>
+          <td colspan = "2"><img class = "temple" ng-src = "{{curP.image.source}}"><span class = "small">Which temple is this?</span></td>
+        </tr>
+        <tr>
+          <td class = "bold" colspan = "2">{{curP.ward}} Sacrament Meeting</td>
+        </tr>
+        <tr>
+          <td class = "bold">Presiding</td>
+          <td>{{curP.presiding}}</td>
+        </tr>
+        <tr>
+          <td class = "bold">Conducting</td>
+          <td>{{curP.conducting}}</td>
+        </tr>
+        <tr>
+          <td class = "bold">Organist</td>
+          <td>{{curP.organist}}</td>
+        </tr>
+        <tr>
+          <td class = "bold">Chorister</td>
+          <td>{{curP.chorister}}</td>
+        </tr>
+        <tr>
+          <td class = "bold">Welcome and Announcements</td>
+        </tr>
+        <tr>
+          <td class = "bold">Opening Hymn #{{curP.opening}}</td>
+          <td class = "ital">{{getHymn(curP.opening)}}</td>
+        </tr>
+        <tr>
+          <td class = "bold">Invocation</td>
+          <td>{{curP.invocation}}</td>
+        </tr>
+        <tr>
+          <td class = "bold">Ward Business</td>
+        </tr>
+        <tr>
+          <td class = "bold">Sacrament Hymn #{{curP.sacrament}}</td>
+          <td class = "ital">{{getHymn(curP.sacrament)}}</td>
+        </tr>
+        <tr>
+          <td class = "bold">Administration of the Sacrament</td>
+        </tr>
+        <tr ng-show = "curP.fast">
+          <td class = "bold">Bearing of Testimonies</td>
+        </tr>
+        <tr ng-show = "curP.program">
+          <td class = "bold">{{curP.programName}}</td>
+        </tr>
+        <tr ng-repeat = "y in curP.youthSpeakers">
+          <td class = "bold">Youth Speaker</td>
+          <td>{{y.name}}</td>
+        </tr>
+        <tr ng-repeat = "y in curP.pSpeakers">
+          <td class = "bold">Speaker</td>
+          <td>{{y.name}}</td>
+        </tr>
+        <tr ng-hide = "curP.fast || curP.program">
+          <td class = "bold">Intermediate Hymn #</span>{{curP.intermediate}}</td>
+          <td class = "ital">{{getHymn(curP.intermediate)}}</td>
+        </tr>
+        <tr ng-repeat = "y in curP.aSpeakers">
+          <td class = "bold">Speaker</td>
+          <td>{{y.name}}</td>
+        </tr>
+        <tr ng-hide = "curP.program">
+          <td class = "bold">Closing Hymn #{{curP.closing}}</td>
+          <td class = "ital">{{getHymn(curP.closing)}}</td>
+        </tr>
+        <tr>
+          <td class = "bold">Benediction</td>
+          <td>{{curP.benediction}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class = "pagebreak">
+  <div class = "tDivL">
+    <table>
+
+      <tbody>
+        <tr>
+          <td class = "bold smHead" colspan = "2">Reminders</td>
+        </tr>
+        <tr ng-repeat = "y in curP.sReminders">
+          <td colspan = "2">-{{y.name}}</td>
+        </tr>
+      </tbody>
+      <tbody ng-repeat = "y in curP.reminders">
+        <tr>
+          <td colspan = "2" class = "bold">{{y.title}}</td>
+        </tr>
+        <tr ng-repeat = "x in y.data">
+          <td colspan = "2"><strong>{{curP.x.name}}</strong>-{{curP.x.info}}</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td colspan = "2" class = "bold smHead">Announcements</td>
+        </tr>
+        <tr ng-repeat = "y in curP.announcements">
+          <td colspan = "2"><span class = "bold">{{y.name}}</span>-{{y.data}}</td>
+        </tr>
+        <tr ng-repeat = "y in curP.sAnnouncements">
+          <td class = "small" colspan = "2">{{y.name}}</td>
+        </tr>
+        <tr>
+          <td colspan = "2" class = "bold smHead">Emergency Preparedness</td>
+        </tr>
+        <tr>
+          <td colspan = "2">Each month we'll give a new recipe using only storage items.  Mighty tasty!</td>
+        </tr>
+          <td class = "bold">{{curP.emergencyPrep.recipeName}}</td>
+        <tr>
+        <tr>
+          <td>
+          	<td>{{curP.emergencyPrep.recipe}}</td>
+          </td>
+        </tr>
+          <td>{{curP.emergencyPrep.contact}}</td>
+        </tr>
+        <tr>
+          <td colspan = "2" class = "small">Temple Answer: {{curP.image.name}}</td>
+        </tr>
+        <tr>
+          <td colspan = "2" class = "small">Temple Fact: {{curP.image.fact}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class = "tDivR">
+    <table>
+
+      <tbody>
+        <tr>
+          <td class = "bold smHead" colspan = "2">Reminders</td>
+        </tr>
+        <tr ng-repeat = "y in curP.sReminders">
+          <td colspan = "2">-{{y.name}}</td>
+        </tr>
+      </tbody>
+      <tbody ng-repeat = "y in curP.reminders">
+        <tr>
+          <td colspan = "2" class = "bold">{{y.title}}</td>
+        </tr>
+        <tr ng-repeat = "x in y.data">
+          <td colspan = "2"><strong>{{curP.x.name}}</strong>-{{curP.x.info}}</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td colspan = "2" class = "bold smHead">Announcements</td>
+        </tr>
+        <tr ng-repeat = "y in curP.announcements">
+          <td colspan = "2"><span class = "bold">{{y.name}}</span>-{{y.data}}</td>
+        </tr>
+        <tr ng-repeat = "y in curP.sAnnouncements">
+          <td class = "small" colspan = "2">{{y.name}}</td>
+        </tr>
+        <tr>
+          <td colspan = "2" class = "bold smHead">Emergency Preparedness</td>
+        </tr>
+        <tr>
+          <td colspan = "2">Each month we'll give a new recipe using only storage items.  Mighty tasty!</td>
+        </tr>
+          <td class = "bold">{{curP.emergencyPrep.recipeName}}</td>
+        <tr>
+        <tr>
+          <td>
+          	<td>{{curP.emergencyPrep.recipe}}</td>
+          </td>
+        <tr>
+          <td>{{curP.emergencyPrep.contact}}</td>
+        </tr>
+        <tr>
+          <td colspan = "2" class = "small">Temple Answer: {{curP.image.name}}</td>
+        </tr>
+        <tr>
+          <td colspan = "2" class = "small">Temple Fact: {{curP.image.fact}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
